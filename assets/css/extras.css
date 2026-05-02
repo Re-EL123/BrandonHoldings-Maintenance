@@ -1,0 +1,319 @@
+/* ================================
+   FOOTER, FORMS, POPUPS
+   ================================ */
+
+/* Footer Styles */
+.site-footer {
+    position: relative;
+    background-color: var(--color-white);
+    padding: var(--spacing-xl) 0 var(--spacing-sm);
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 22, 22, 0.85);
+    z-index: 1;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-col {
+    color: var(--color-white);
+}
+
+.footer-logo {
+    filter: brightness(2) contrast(2) saturate(0.81);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-description {
+    color: var(--color-gray-medium);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-social {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background-color: transparent;
+    color: var(--color-gray-medium);
+    font-size: 16px;
+    transition: var(--transition-fast);
+}
+
+.social-link:hover {
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+.footer-heading {
+    text-decoration: underline;
+    color: var(--color-white);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.footer-menu a {
+    color: var(--color-white);
+    padding: 11px 0;
+    transition: var(--transition-fast);
+}
+
+.footer-menu a:hover {
+    color: var(--color-gray-medium);
+    padding-left: 5px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-contact li {
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact i {
+    width: 14px;
+    color: var(--color-white);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-gray-dark);
+    padding-top: var(--spacing-sm);
+    text-align: center;
+}
+
+.copyright {
+    color: var(--color-white);
+    margin: 0;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-white);
+    color: rgba(0, 0, 0, 0.7);
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(14, 101, 99, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+}
+
+.btn-submit {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px 28px;
+    font-weight: var(--font-bold);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-submit:hover {
+    background-color: #0a4f4d;
+    transform: translateY(-2px);
+}
+
+.form-message {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Popup Modal */
+.popup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease;
+}
+
+.popup-modal.active {
+    display: flex;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 2, 2, 0.86);
+    z-index: 1;
+}
+
+.popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 100vh;
+    max-height: 700px;
+    display: flex;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.popup-inner {
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 5%;
+    position: relative;
+    overflow-y: auto;
+    background-image: url('https://brandonholdingsgroup.rightwaystudio.co.za/wp-content/uploads/2025/09/bubble_bg_popup.png');
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--color-secondary);
+    cursor: pointer;
+    z-index: 3;
+    transition: var(--transition-fast);
+}
+
+.popup-close:hover {
+    color: var(--color-accent);
+    transform: rotate(90deg);
+}
+
+/* Responsive Footer */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-brand {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-brand {
+        grid-column: span 1;
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-menu,
+    .footer-contact {
+        text-align: center;
+    }
+    
+    .footer-contact li {
+        justify-content: center;
+    }
+    
+    .popup-content {
+        width: 95%;
+        max-width: 500px;
+    }
+    
+    .popup-close {
+        top: 3%;
+        right: 40px;
+    }
+    
+    .popup-inner {
+        padding: 15% 10%;
+    }
+}
